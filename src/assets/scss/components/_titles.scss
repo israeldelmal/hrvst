@@ -1,0 +1,21 @@
+@import 'vars';
+
+.title {
+    width: 100%;
+    margin-bottom: 20px;
+    span {
+        font-size: $fs-xb;
+        font-weight: 300;
+        color: $main;
+    }
+}
+
+.sub-title {
+    width: 100%;
+    margin-bottom: 20px;
+    span {
+        font-size: $fs-big;
+        font-weight: 300;
+        color: $main;
+    }
+}

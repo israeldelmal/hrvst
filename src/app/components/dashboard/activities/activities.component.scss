@@ -1,0 +1,12 @@
+@import '../../../../assets/scss/components/vars';
+@import '../../../../assets/scss/components/titles';
+
+.panel {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    &:last-of-type {
+        margin-bottom: 0px;
+    }
+}

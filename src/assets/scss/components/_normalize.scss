@@ -1,0 +1,26 @@
+@import 'vars';
+
+small {
+    font-size: 12px;
+}
+
+strong {
+    font-size: 1em;
+    font-weight: 900;
+}
+
+span {
+    display: inline-block;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    transition: all 0.3s;
+}

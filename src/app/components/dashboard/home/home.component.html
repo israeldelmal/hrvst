@@ -1,0 +1,44 @@
+<section>
+    <div class="title">
+        <span>Inicio</span>
+    </div>
+    <div class="cards-grid">
+        <div class="card">
+            <span class="card-title">Temperatura promedio actual</span>
+            <div class="card-info">
+                <strong>14.59°C</strong>
+                <i class="fas fa-thermometer-quarter"></i>
+            </div>
+        </div>
+        <div class="card">
+            <span class="card-title">Humedad promedio actual</span>
+            <div class="card-info">
+                <strong>47.23%</strong>
+                <i class="fas fa-tint"></i>
+            </div>
+        </div>
+        <div class="card">
+            <span class="card-title">Conductividad promedio actual</span>
+            <div class="card-info">
+                <strong>0.002mA</strong>
+                <i class="fas fa-plug"></i>
+            </div>
+        </div>
+    </div>
+    <mat-tab-group dynamicHeight class="full-width charts">
+        <mat-tab label="Temperatura">
+            <div class="table-container">
+                <canvas baseChart height="200" [chartType]="'line'" [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions"></canvas>
+            </div>
+        </mat-tab>
+        <mat-tab label="Humedad" disabled>
+            <div class="table-container"></div>
+        </mat-tab>
+        <mat-tab label="Conductividad" disabled>
+            <div class="table-container"></div>
+        </mat-tab>
+    </mat-tab-group>
+    <div class="button-container">
+        <button type="button" mat-flat-button color="primary">Generar reporte</button>
+    </div>
+</section>

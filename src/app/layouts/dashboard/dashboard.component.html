@@ -1,0 +1,27 @@
+<button type="button" (click)="toggleNav()" class="btn-nav" [ngClass]="{'active': activeNav == true}">
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</button>
+<header>
+    <div class="settings">
+        <span>Administrador</span>
+        <button type="button" (click)="signOut()"><i class="fas fa-sign-out-alt"></i></button>
+    </div>
+</header>
+<aside [ngClass]="{'active': activeNav == true}">
+    <div class="logo">
+        <img src="../../../assets/img/logos/HRVST-CTRL_logoblanco.svg">
+    </div>
+    <nav>
+        <a *ngFor="let route of navRouting" [routerLink]="route.url" [ngClass]="{'active': route.url === currentUrl}" matRipple matRippleColor="rgba(255, 255, 255, 0.05)" (click)="toggleNav(false)">
+            <i class="fas" [ngClass]="route.icon"></i>
+            <span>{{ route.title }}</span>
+        </a>
+    </nav>
+</aside>
+<main>
+    <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,26 @@
+<form class="sign" [formGroup]="formSignIn" (ngSubmit)="signIn()">
+    <legend>Iniciar Sesión</legend>
+    <mat-form-field class="full-width">
+        <input type="email" matInput placeholder="Correo electrónico" formControlName="email">
+        <mat-icon matSuffix>mail</mat-icon>
+        <mat-error *ngIf="formSignIn.controls['email'].hasError('required')">
+            <small>Este campo <strong>es necesario</strong></small>
+        </mat-error>
+        <mat-error *ngIf="formSignIn.controls['email'].hasError('email') && !formSignIn.controls['email'].hasError('required')">
+            <small>Se necesita un <strong>formato de email válido</strong></small>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <input type="password" matInput placeholder="Contraseña" formControlName="password">
+        <mat-icon matSuffix>vpn_key</mat-icon>
+        <mat-error *ngIf="formSignIn.controls['password'].hasError('required')">
+            <small>Este campo <strong>es necesario</strong></small>
+        </mat-error>
+        <mat-error *ngIf="formSignIn.controls['password'].hasError('minlength') && !formSignIn.controls['password'].hasError('required')">
+            <small>Mínimo <strong>8 caracteres</strong></small>
+        </mat-error>
+    </mat-form-field>
+    <div class="footer">
+        <button type="submit" class="full-width" mat-flat-button color="primary" [disabled]="!formSignIn.valid">Iniciar Sesión</button>
+    </div>
+</form>
